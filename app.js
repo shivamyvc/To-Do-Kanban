@@ -20,6 +20,7 @@ function addMyTask(){
         taskDesc=prompt("Ek Aur Kaam, Pahle wale To Hone De!!");   
     }else{
         taskDesc=prompt("Chal Bhai Kaam Bata");
+
     }
     if(taskDesc.split(" ").length>1){
     let task=document.createElement("li");
@@ -33,23 +34,24 @@ function addMyTask(){
 
     moveTaskToWIP.addEventListener("click",(evt)=>{
         moveTask(evt);
-        if(taskCount==0){
-        addTaskBtn.innerText="Chal Kam Bata";
-    }
     });
 
     task.innerText=taskDesc;
     task.append(moveTaskToWIP);
     pendingBoard.append(task);
+    
     taskCount+=1;
+    if(taskCount>0){
+        addTaskBtn.innerText="Ek Aur Kaam";
+    }else{
+        addTaskBtn.innerText="Kam Karega";
+    }
 }
 }
 
 addTaskBtn.addEventListener("click",(evt)=>{
     addMyTask();
-    if(taskCount>0){
-        addTaskBtn.innerText="Ek Aur Kaam";
-    }
+
     
 });
 
@@ -61,7 +63,11 @@ function moveTask(evt){
     let Taskli=evt.target;
     Taskli.innerText="Ye Ho Gaya";
     wipBoard.appendChild(Taskli.parentElement);
+    if(taskCount>0){
     taskCount-=1;
+    }if(taskCount==0){
+        addTaskBtn.innerText="Kam Karega";
+    }
     Taskli.addEventListener("click",(evt1)=>{
         moveTaskDone(evt1);
     });
