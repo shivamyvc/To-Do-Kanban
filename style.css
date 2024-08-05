@@ -1,0 +1,66 @@
+*{
+    background: #EEE5E9;    
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+    margin-top: 2rem;
+    background: #7C7C7C;
+
+}
+
+.boards{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 4rem;
+}
+
+.board{
+    background-color: #CF5C36;
+    height: 14rem;
+    width: 25rem;
+    border:solid black 3px;
+    border-radius: 10px;
+}
+
+.board p{
+    text-align: center;
+    background-color: aqua;
+    font-size: 2rem;
+    border-radius: 10px;
+}
+
+
+/* Button Ptoperties */
+button{
+    border: solid black 3px;
+    border-radius: 6px;
+
+
+}
+
+button:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+#add-Task{
+    margin-top: 50px;
+    margin-left: 150px;
+}
+
+.remove-task-btn{
+    margin-left: 14rem;
+}
+
+.remove-task-btn:hover{
+    visibility: visible;
+} 
+
+/* .task button */
+.done-task-btn{
+    display:none;
+}
